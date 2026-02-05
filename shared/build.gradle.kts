@@ -1,17 +1,17 @@
 plugins {
-    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidKotlinMultiplatformLibrary)
     alias(libs.plugins.mokkery)
 }
 
-android {
-    namespace = "com.tezov.shared"
-    compileSdk = 36
-}
-
 kotlin {
-    androidTarget()
-
+    androidLibrary {
+        namespace = "com.tezov.shared"
+        compileSdk = 36
+        minSdk = 24
+        withHostTestBuilder {
+        }
+    }
     val xcfName = "sharedKit"
     iosArm64 {
         binaries.framework {
@@ -30,4 +30,5 @@ kotlin {
             }
         }
     }
+
 }

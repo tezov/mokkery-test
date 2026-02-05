@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.library) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.androidKotlinMultiplatformLibrary) apply false
     alias(libs.plugins.mokkery) apply false
 }
